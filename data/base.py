@@ -17,11 +17,7 @@ def get_DataSet_on_numpy(path = "DataSet/intent_", subset = "train", delimiter="
             line = line.lower()
             columns = line.split(delimiter)
             line_target.append(columns[-1])
-            w = columns[1:-1]
-            s = ""
-            for q in w:
-                s += q
-            line_data.append(s)
+            line_data.append("".join(columns[1:-1]))
         first_open = True
 
     dataset = {}
